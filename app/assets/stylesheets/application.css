@@ -1,0 +1,164 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS (and SCSS, if configured) file within this directory, lib/assets/stylesheets, or any plugin's
+ * vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any other CSS
+ * files in this directory. Styles in this file should be added after the last require_* statement.
+ * It is generally better to create a new file per style scope.
+ *
+ *= require_tree .
+ *= require_self
+ */
+/* app/assets/stylesheets/users.scss */
+
+.form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin: auto;
+    max-width: 400px;
+    padding: 20px;
+    background-color: #f5f5f5;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+
+.input {
+    display: block;
+    width: 100%;
+    margin-bottom: 10px;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    font-family: inherit;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.button {
+    display: block;
+    width: 100%;
+    margin-top: 20px;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    font-family: inherit;
+    font-weight: bold;
+    color: #fff;
+    background-color: #007bff;
+    box-shadow: 0 0 10px rgba(0, 123, 255, 0.5);
+    transition: background-color 0.3s ease-in-out;
+}
+
+.button:hover {
+    background-color: #0069d9;
+}
+
+.field_with_errors {
+    border: 1px solid red;
+    background-color: #ffe6e6;
+    padding: 2px;
+}
+
+
+
+/* app/assets/stylesheets/products.css.scss */
+table {
+    border-collapse: collapse;
+    width: 100%;
+}
+
+th,
+td {
+    padding: 8px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+}
+
+th {
+    background-color: #f2f2f2;
+}
+
+tr:hover {
+    background-color: #f5f5f5;
+}
+
+/* application.scss */
+.top-bar {
+    background-color: #333;
+    color: #fff;
+    padding: 10px 0;
+}
+
+.top-bar .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.top-bar ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.top-bar ul li {
+    display: inline-block;
+    margin-right: 10px;
+}
+
+.top-bar ul li:last-child {
+    margin-right: 0;
+}
+
+.top-bar a {
+    color: #fff;
+    text-decoration: none;
+}
+
+.top-bar-auth {
+    display: flex;
+    align-items: center;
+}
+
+.top-bar-auth li {
+    margin-left: 10px;
+}
+
+.top-bar-auth li:first-child {
+    margin-left: 0;
+}
+
+.top-bar-auth a {
+    color: #fff;
+    text-decoration: none;
+}
+
+.top-bar-auth .sign-in {
+    border: 2px solid #fff;
+    padding: 5px 10px;
+    border-radius: 5px;
+}
+
+.top-bar-auth .sign-in:hover {
+    background-color: #fff;
+    color: #333;
+}
+
+.top-bar-auth .sign-up {
+    background-color: #fff;
+    color: #333;
+    padding: 5px 10px;
+    border-radius: 5px;
+}
+
+.top-bar-auth .sign-up:hover {
+    background-color: #333;
+    color: #fff;
+}

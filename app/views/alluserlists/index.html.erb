@@ -1,0 +1,20 @@
+<h1>Your Cart</h1>
+<h1>User Email: <%= current_userdevise.email%></h1>
+<table>
+  <% if @userlist.present? %>
+    <thead>
+      <tr>
+        <th>Email</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @userlist.each do |users| %>
+        <tr>
+          <td><%= users.email %></td>
+        </tr>
+      </tbody>
+    <% end %>
+  <% else %>
+    <p>empty.</p>
+  <%end%>
+</table>

@@ -1,0 +1,15 @@
+<center>
+  <h1>Create an account</h1>
+</center>
+<%= form_with model: @user, local: true, html: { class: "form" } do |form| %>
+  <%# <%= form.text_field :first_name, placeholder: "First name", required: true, class: "input" %>
+  <%# <%= form.text_field :last_name, placeholder: "Last name", required: true, class: "input" %>
+  <%= form.email_field :email, placeholder: "Email address", required: true, class: "input" %>
+  <%= form.password_field :password, placeholder: "Password", required: true, class: "input" %>
+  <%= form.password_field :password_confirmation, placeholder: "Confirm password", required: true, class: "input" %>
+  <div class="field_with_errors">
+    <%= @user.errors[:password_confirmation].join(", ") %>
+  </div>
+  <%= form.submit "Create account", class: "button" %><br>
+  <%=  link_to "You Already Have An Account ?", users_login_path %>
+<% end %>

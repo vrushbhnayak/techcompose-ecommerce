@@ -1,0 +1,31 @@
+<h1>Your Cart</h1>
+<h1>User Email: <%= current_userdevise.email%></h1>
+<table>
+  <% if @product_cart.present? %>
+    <thead>
+      <tr>
+        <th>Product</th>
+        <th>Price</th>
+        <th>Quantity</th>
+        <th>Total</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @product_cart.each do |product_cart| %>
+        <tr>
+          <td><%= product_cart.product.name %></td>
+          <td><%= product_cart.product.price %></td>
+          <td><%= product_cart.quantity %></td>
+          <td><%= product_cart.quantity * product_cart.product.price%></td>
+        </tr>
+      </tbody>
+    <% end %>
+  <% else %>
+    <p>Your cart is empty.</p>
+  <%end%>
+</table>
+<%# 
+<tr>
+  <td colspan="3" class="text-end"><strong>Total</strong></td>
+  <%# <td><%= @product_cart.sum { |product_cart| product_cart.product.price } %></td>
+<%# </tr> %>

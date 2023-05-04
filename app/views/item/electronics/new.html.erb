@@ -1,0 +1,12 @@
+<center>
+  <h1>Create an Product</h1>
+</center>
+<%= form_with model: @electronics, local: true, html: { class: "form" } do |form| %>
+  <%# <%= form.text_field :first_name, placeholder: "First name", required: true, class: "input" %>
+  <%# <%= form.text_field :last_name, placeholder: "Last name", required: true, class: "input" %>
+  <%= form.text_field :name, placeholder: "Product Name", required: true, class: "input" %>
+  <%= form.text_field :price, placeholder: "Price", required: true, class: "input" %>
+  <%= form.text_field :description, placeholder: "Product description", required: true, class: "input" %>
+  <%= form.text_field :category, placeholder: "Category", required: true, class: "input" %>
+  <%= form.submit "Create Product", class: "button" %><br>
+<% end %>

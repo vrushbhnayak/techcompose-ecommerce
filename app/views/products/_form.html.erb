@@ -1,0 +1,10 @@
+<%= form_with model: @product, local: true, html: { class: "form" } do |form| %>
+  <%# <%= form.text_field :first_name, placeholder: "First name", required: true, class: "input" %>
+  <%# <%= form.text_field :last_name, placeholder: "Last name", required: true, class: "input" %>
+  <%= form.text_field :name, placeholder: "Product Name", required: true, class: "input" %>
+  <%= form.text_field :price, placeholder: "Price", required: true, class: "input" %>
+  <%= form.text_field :description, placeholder: "Product description", required: true, class: "input" %>
+  <%= form.file_field :image, placeholder: "Product Image", required: true, class: "input"%>
+  <%= form.select :category, options_for_select(["Electronics", "Cloths", "Grocery"]), { prompt: "Select a category" }, class: "input" %>
+  <%= form.submit "Create Product", class: "button" %><br>
+<% end %>

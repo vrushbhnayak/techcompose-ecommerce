@@ -1,0 +1,63 @@
+<center>
+  <h1>Product List</h1>
+</center>
+<div class="topbar">
+  <ul>
+  </ul>
+</div>
+<% if userdevise_signed_in? %>
+  <td>Your Email: <%= current_userdevise.email%></td>
+  <h2><%= link_to "Signout",destroy_userdevise_session_path, method: :delete %></h2>
+  <%if current_userdevise.isadmin == false %>
+    <h2>
+      <td><%= link_to 'Show cart',product_carts_path%></td>
+    </h2>
+  <%else%>
+    <h2>
+      <td><%= link_to 'Add New Product',new_product_path%></td>
+      <td><%= link_to 'SHow Users', alluserlists_path%>
+      </h2>
+    <%end%>
+  <% else %>
+    <h2><%= link_to "SignIn",new_userdevise_session_path%></h2>
+  <% end %>
+  <table>
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Description</th>
+        <th>Price</th>
+        <th>Category</th>
+        <th>Image</th>
+        <th></th>
+        <th></th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @product.each do |product| %>
+        <tr>
+          <td><%= product.name %></td>
+          <td><%= product.description %></td>
+          <td><%= product.price %></td>
+          <td><%= product.category %></td>
+          <td><%if product.image.attached?%>
+              <%= image_tag product.image, style: "width:120px;height:100px;"%>
+            <%end%>
+          </td>
+          <% if current_userdevise && current_userdevise.isadmin %>
+            <td><%= link_to 'Edit', edit_product_path(product)%></td>
+            <td><%= link_to "Delete",product_path(product), data: {
+                    turbo_method: :delete,
+                    turbo_confirm: "Are you sure?"
+                  } %></td>
+          <%else%>
+            <td><%= form_tag product_carts_path do %>
+                <%= hidden_field_tag :product_id, product.id%>
+                <%= submit_tag "Add to Cart" %>
+              </td>
+            <% end %>
+          </tr>
+        <% end %>
+      <% end%>
+    </tbody>
+  </table>
